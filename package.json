@@ -1,0 +1,20 @@
+{
+  "name": "random-form-generator",
+  "version": "1.0.0",
+  "description": "It creates forms that \"walks\" through its canvas for sometime.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [
+    "create coding",
+    "random forms",
+    "canvas"
+  ],
+  "author": "Thiago Borges",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
