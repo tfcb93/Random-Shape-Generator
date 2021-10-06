@@ -2,7 +2,7 @@ import Points from './Points';
 
 /**
  * Canvas controller
- * Here we control the canvas element, its context and the array of polygons/forms
+ * Here we control the canvas element, its context and the array of polygons/shapes
  */
 
 class Canvas {
@@ -14,11 +14,11 @@ class Canvas {
         this.canvas.width = canvasWidth;
         this.canvas.height = canvasHeight;
 
-        this.forms = [];
-        this.forms.push(new Points(quads));
+        this.shapes = [];
+        this.shapes.push(new Points(quads));
 
         this.canvas.addEventListener('click', () => {
-            this.forms.push(new Points(quads));
+            this.shapes.push(new Points(quads));
         });
     }
 
@@ -27,7 +27,7 @@ class Canvas {
         const color = this.changeColorRandomly();
         this.ctx.strokeStyle = color;
         this.ctx.beginPath();
-        this.forms.forEach((points) => {
+        this.shapes.forEach((points) => {
             points.drawPoints(this.ctx);
             points.decreaseLifeTime(1);
         });
@@ -36,7 +36,7 @@ class Canvas {
 
     // Responsible to randomly change the point values
     changePoints() {
-        this.forms.forEach((points) => {
+        this.shapes.forEach((points) => {
             points.distortAllPoints(
                 Math.floor(Math.random() * (6 - (-5)) + (-5)),
                 Math.floor(Math.random() * (6 - (-5)) + (-5))
@@ -56,9 +56,9 @@ class Canvas {
         return `rgba(${newColor.join(", ")})`;
     }
 
-    // delete dead forms from the forms array
-    buryDeadForms() {
-        this.forms = this.forms.filter((points) => points.isDead === false);
+    // delete dead shapes from the shapes array
+    buryDeadshapes() {
+        this.shapes = this.shapes.filter((points) => points.isDead === false);
     }
 
 }
