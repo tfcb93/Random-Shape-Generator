@@ -1,9 +1,9 @@
-# Random Form Generator
+# Random Shape Generator
 
-This is a random form generator created in HTML canvas as a *creative coding* activity.
+This is a random shape generator created in HTML canvas as a *creative coding* activity.
 
-* It starts with a random form that has a life time.
-* Click on the screen (canvas) to create more random forms.
+* It starts with a random shape that has a life time.
+* Click on the screen (canvas) to create more random shapes.
 * Color changes over time.
 * Life time goes from 1 minute to 15 seconds (also randomly generated).
 
