@@ -15,7 +15,7 @@ window.onload = () => {
     const moviment = () => {
         canvas.changePoints();
         canvas.drawPoints();
-        canvas.buryDeadForms();
+        canvas.buryDeadShapes();
         requestAnimationFrame(moviment);
     }
     moviment();

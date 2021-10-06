@@ -57,7 +57,7 @@ class Canvas {
     }
 
     // delete dead shapes from the shapes array
-    buryDeadshapes() {
+    buryDeadShapes() {
         this.shapes = this.shapes.filter((points) => points.isDead === false);
     }
 
