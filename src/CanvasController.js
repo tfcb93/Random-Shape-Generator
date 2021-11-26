@@ -13,12 +13,12 @@ class Canvas {
 
         this.canvas.width = canvasWidth;
         this.canvas.height = canvasHeight;
+        this.quads = quads;
 
         this.shapes = [];
-        this.shapes.push(new Points(quads));
 
         this.canvas.addEventListener('click', () => {
-            this.shapes.push(new Points(quads));
+            this.addShape();
         });
     }
 
@@ -54,6 +54,17 @@ class Canvas {
         ];
 
         return `rgba(${newColor.join(", ")})`;
+    }
+
+    changeWindowSize(newWidth, newHeight) {
+        this.canvas.width = newWidth;
+        this.canvas.height = newHeight;
+    }
+
+
+    // add new shapes for the shapes array
+    addShape() {
+        this.shapes.push(new Points(this.quads));
     }
 
     // delete dead shapes from the shapes array

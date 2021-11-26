@@ -7,11 +7,67 @@
     <title>Document</title>
 </head>
 <body>
+    <div id="instruction" class="instruction-card-container">
+        <h1 class="instruction-card">
+            Click on the page to generate a random shape.
+        </h1>
+    </div>
     <canvas id="canvas" width="640" height="480"></canvas>
+    <div class="warning">
+        <span class="warning-title">Seisure warning!</span>
+        <p class="warning-text">This page contains flashing images</p>
+    </div>
 </body>
 <script type="module" src="src/index.js"/></script>
 <style>
     body {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    canvas {
+        border: 1px solid black;
+    }
+
+    .instruction-card-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .instruction-card {
+        background-color: rgba(138,43,226);
+        font-family: sans-serif;
+        color: white;
+        font: 72px;
+        padding: 25px;
+        border-radius: 5px;
+    }
+    
+    .warning {
+        position: absolute;
+        bottom: 0;
+        margin: 15px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        background-color: rgba(138,43,226, 0.7);
+        font-family: sans-serif;
+        color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .warning-title {
+        padding-bottom: 10px;
+    }
+
+    .warning-text {
         margin: 0;
     }
 </style>
