@@ -16,5 +16,8 @@
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "chroma-js": "^2.4.2"
   }
 }

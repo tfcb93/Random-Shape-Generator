@@ -9,11 +9,11 @@
 <body>
     <div id="instruction" class="instruction-card-container">
         <h1 class="instruction-card">
-            Click on the page to generate a random shape.
+            Click on the page to start
         </h1>
     </div>
     <canvas id="canvas" width="640" height="480"></canvas>
-    <div class="warning">
+    <div id="warning" class="warning">
         <span class="warning-title">Seisure warning!</span>
         <p class="warning-text">This page contains flashing images</p>
     </div>
@@ -23,6 +23,7 @@
     body {
         margin: 0;
         overflow: hidden;
+        background-color: black;
     }
 
     .instruction-card-container {
@@ -37,12 +38,16 @@
     }
 
     .instruction-card {
-        background-color: rgba(138,43,226);
-        font-family: sans-serif;
-        color: white;
-        font: 72px;
+        /* background-color: rgba(138,43,226); */
+        color: green;
+        font-size: 48px;
+        font-family: monospace;
+        font-weight: 600;
         padding: 25px;
-        border-radius: 5px;
+        /* border-radius: 5px; */
+        /* border: 5px solid green; */
+        /* border-style: dashed; */
+        opacity: 0.7;
     }
     
     .warning {
@@ -50,13 +55,15 @@
         bottom: 0;
         margin: 15px;
         padding: 10px 15px;
-        border-radius: 5px;
-        background-color: rgba(138,43,226, 0.7);
-        font-family: sans-serif;
-        color: rgba(255, 255, 255, 0.8);
+        /* background-color: rgba(138,43,226, 0.7); */
+        font-family: monospace;
+        font-size: 20px;
+        color: green;
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: 0.7;
+        border: 3px solid green;
     }
 
     .warning-title {
@@ -66,5 +73,11 @@
     .warning-text {
         margin: 0;
     }
+
+    .warning-fade-out {
+        opacity: 0;
+        transition: opacity 3s ease-out;
+    }
+
 </style>
 </html>
