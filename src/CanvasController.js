@@ -1,4 +1,4 @@
-import Points from "./Points";
+import Shape from "./Shape";
 import chroma from "chroma-js";
 
 /**
@@ -25,26 +25,16 @@ class Canvas {
 
   // Drawing points on the canvas
   drawPoints() {
-    this.ctx.beginPath();
     this.shapes.forEach((points) => {
       points.drawPoints(this.ctx);
       points.decreaseLifeTime(1);
     });
     // this.ctx.stroke();
-    this.ctx.resetTransform();
   }
 
   // Responsible to randomly change the point values
   changePoints() {
     this.shapes.forEach((points) => {
-      //   points.distortAllPoints(
-      //     Math.floor(Math.random() * (6 - -5) + -5),
-      //     Math.floor(Math.random() * (6 - -5) + -5)
-      //   );
-      //   points.distortPoints(
-      //     Math.floor(Math.random() * (2 - -1) + -1),
-      //     Math.floor(Math.random() * (2 - -1) + -1)
-      //   );
       points.distortPoints();
     });
   }
@@ -79,7 +69,7 @@ class Canvas {
 
   // add new shapes for the shapes array
   addShape() {
-    this.shapes.push(new Points(this.quads));
+    this.shapes.push(new Shape(this.quads));
   }
 
   // delete dead shapes from the shapes array
