@@ -13,18 +13,11 @@ window.onload = () => {
   };
 
   const instructionCard = document.getElementById("instruction");
-  const warningCard = document.getElementById("warning");
 
-  //   instructionCard.addEventListener("click", () => {
-  //     canvas.addShape();
-  //     instructionCard.parentNode.removeChild(instructionCard);
-  //     warningCard.classList.add("warning-fade-out");
-  //   });
-
-  //test mode
-  canvas.addShape();
-  instructionCard.parentNode.removeChild(instructionCard);
-  warningCard.parentNode.removeChild(warningCard);
+  instructionCard.addEventListener("click", () => {
+    canvas.addShape();
+    instructionCard.parentNode.removeChild(instructionCard);
+  });
 
   // animation frame function that change the points, draw it, delete dead forms and repeat
   const moviment = () => {
