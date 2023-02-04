@@ -22,8 +22,17 @@
                     This page contains flashing images
                 </h3>
             </div>
+            <div class="links">
+                <a href="https://github.com/tfcb93/Random-Shape-Generator" target="_blank" id="github-link">github</a>
+                <a href="https://tfcb93.com/" target="_blank" id="website-link">website</a>
+            </div>
             <h1 class="bottom-text">
                 Click on the page to start
+            </h1>
+            <h1 class="cookies-text">
+                This page does not use cookies so far
+                <br />
+                Use this page at your own risk
             </h1>
         </div>
     </div>
@@ -46,8 +55,8 @@
     }
 
     .instruction-card {
-        width: 500px;
-        height: 500px;
+        min-width: 500px;
+        min-height: 500px;
         padding: 25px;
         display: flex;
         flex-direction: column;
@@ -59,6 +68,25 @@
         text-align: center;
 
         border: 10px solid white;
+
+    }
+
+    .links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;
+    }
+    
+    .links > a,a:visited {
+        text-decoration: none;
+        color: purple;
+        font-size: 28px;
+
+    }
+
+    .links > a:hover {
+        color: lime;
     }
 
     .bottom-text {
@@ -78,6 +106,10 @@
         margin-bottom: 30px;
     }
 
+    .cookies-text {
+        font-size: 14px;
+    }
+
     @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -87,8 +119,18 @@
 	}
     100% {
         background-position: 0% 50%;
+        }
+    
     }
-}
+
+    @media screen and (max-width: 500px) {
+        .instruction-card{
+            min-width: 300px;
+            padding: 25px 15px;
+            font-size: 20px;
+
+        }
+    }
 
 </style>
 </html>

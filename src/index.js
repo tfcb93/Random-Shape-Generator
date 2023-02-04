@@ -14,9 +14,12 @@ window.onload = () => {
 
   const instructionCard = document.getElementById("instruction");
 
-  instructionCard.addEventListener("click", () => {
-    canvas.addShape();
-    instructionCard.parentNode.removeChild(instructionCard);
+  instructionCard.addEventListener("click", (e) => {
+    console.log(e.target.tagName);
+    if (e.target.tagName !== "A") {
+      canvas.addShape();
+      instructionCard.parentNode.removeChild(instructionCard);
+    }
   });
 
   // animation frame function that change the points, draw it, delete dead forms and repeat
