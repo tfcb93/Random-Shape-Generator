@@ -7,64 +7,130 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="instruction" class="instruction-card-container">
-        <h1 class="instruction-card">
-            Click on the page to generate a random shape.
-        </h1>
+    <div id="instruction" class="instruction-container">
+        <div class="instruction-card">
+            <div class="title">
+                <div class="title-gradient">
+                </div>
+            </div>
+            <div class="Description">
+                
+            </div>
+            <div class="warning">
+                <h1>Seisure warning!</h1>
+                <h3>
+                    This page contains flashing images
+                </h3>
+            </div>
+            <div class="links">
+                <a href="https://github.com/tfcb93/Random-Shape-Generator" target="_blank" id="github-link">github</a>
+                <a href="https://tfcb93.com/" target="_blank" id="website-link">website</a>
+            </div>
+            <h1 class="bottom-text">
+                Click on the page to start
+            </h1>
+            <h1 class="cookies-text">
+                This page does not use cookies so far
+                <br />
+                Use this page at your own risk
+            </h1>
+        </div>
     </div>
     <canvas id="canvas" width="640" height="480"></canvas>
-    <div class="warning">
-        <span class="warning-title">Seisure warning!</span>
-        <p class="warning-text">This page contains flashing images</p>
-    </div>
 </body>
 <script type="module" src="src/index.js"/></script>
 <style>
     body {
         margin: 0;
         overflow: hidden;
+        background-color: black;
     }
 
-    .instruction-card-container {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .instruction-container {
         width: 100%;
-        height: 100%;
+        height: 100lvh;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     .instruction-card {
-        background-color: rgba(138,43,226);
-        font-family: sans-serif;
-        color: white;
-        font: 72px;
+        min-width: 500px;
+        min-height: 500px;
         padding: 25px;
-        border-radius: 5px;
-    }
-    
-    .warning {
-        position: absolute;
-        bottom: 0;
-        margin: 15px;
-        padding: 10px 15px;
-        border-radius: 5px;
-        background-color: rgba(138,43,226, 0.7);
-        font-family: sans-serif;
-        color: rgba(255, 255, 255, 0.8);
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
+        font-family: monospace;
+        font-size: 24px;
+        color: white;
+        text-align: center;
+
+        border: 10px solid white;
+
     }
 
-    .warning-title {
-        padding-bottom: 10px;
+    .links {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 5px 0;
+    }
+    
+    .links > a,a:visited {
+        text-decoration: none;
+        color: purple;
+        font-size: 28px;
+
     }
 
-    .warning-text {
-        margin: 0;
+    .links > a:hover {
+        color: lime;
     }
+
+    .bottom-text {
+        margin-top: 50px;
+        color: yellowgreen;
+        font-size: 24px;
+    }
+
+    .title-gradient {
+        width: 270px;
+        height: 120px;
+        background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,154,0,1) 12.5%, rgba(206,255,0,1) 25%, rgba(1,244,0,1) 37.5%, rgba(0,255,239,1) 50%, rgba(42,0,255,1) 62.5%, rgba(255,0,249,1) 75%, rgba(255,0,138,1) 87.5%, rgba(255,0,0,1) 100%);
+        background-size: 500% 100%;
+        -webkit-mask-image: url('./public/images/title-mask.png');
+        mask-image: url('./public/images/title-mask.png');
+        animation: gradient 60s ease infinite;
+        margin-bottom: 30px;
+    }
+
+    .cookies-text {
+        font-size: 14px;
+    }
+
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+        background-position: 100% 50%;
+	}
+    100% {
+        background-position: 0% 50%;
+        }
+    
+    }
+
+    @media screen and (max-width: 500px) {
+        .instruction-card{
+            min-width: 300px;
+            padding: 25px 15px;
+            font-size: 20px;
+
+        }
+    }
+
 </style>
 </html>

@@ -14,7 +14,8 @@
   ],
   "author": "Thiago Borges",
   "license": "ISC",
-  "devDependencies": {
-    "parcel": "^2.0.0"
+  "dependencies": {
+    "chroma-js": "^2.4.2",
+    "parcel": "^2.8.3"
   }
 }
