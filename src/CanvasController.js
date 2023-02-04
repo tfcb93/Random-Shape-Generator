@@ -69,6 +69,10 @@ class Canvas {
 
   // add new shapes for the shapes array
   addShape() {
+    // I cap it to 100
+    if (this.shapes.length >= 100) {
+      return;
+    }
     this.shapes.push(new Shape(this.quads));
   }
 
